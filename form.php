@@ -1,35 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
+<!-- Error messages -->
+<?php if(!empty($response)) {?>
+<div class="form-group col-12 text-center">
+  <div class="alert text-center <?php echo $response['status']; ?>">
+    <?php echo $response['message']; ?>
+  </div>
+</div>
+<?php }?>
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
-
-<script src="https://kit.fontawesome.com/602a7a70a0.js" crossorigin="anonymous"></script>
-
-
-</head>
-<body>
-    <section>
-        <div class="form-box">
-            <div class="form-value">
-                <?php include('form.php'); ?>
-                <!-- Error messages -->
-                <?php if(!empty($response)) {?>
-                <div class="form-group col-12 text-center">
-                    <div class="alert text-center <?php echo $response['status']; ?>">
-                        <?php echo $response['message']; ?>
-                    </div>
-                    </div>
-                <?php }?>
-                <!-- Contact form -->
-                <form action="" name="contactForm" id="contactForm" method="post" enctype="multipart/form-data" novalidate>
+<!-- Form -->
+<form action="" name="contactForm" id="contactForm" method="post" enctype="multipart/form-data" novalidate>
                     <h2>Contact Me</h2>
                     <div class="inputbox">
                         <i class="fa-solid fa-user"></i>
@@ -66,11 +45,3 @@
                         <button id="submit-btn" type="submit">Submit</button>
                     </div>
                 </form>
-            </div>
-        </div>
-    </section>
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</body>
-</html>
