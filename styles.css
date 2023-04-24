@@ -11,6 +11,7 @@ section{
     background: url(background.jpg)no-repeat;
     background-position: center;
     background-size: cover;
+    color: white !important;
 }
 
 .form-box{
